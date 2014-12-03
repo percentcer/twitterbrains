@@ -1,13 +1,13 @@
 __author__ = 'spencer'
 from flask import Flask, request, render_template
-from chatbot.chatbot import init, authenticate_twitter, generate_sentence
+from chatbot import init, authenticate_twitter, generate_sentence
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def home():
-    return 'hello.'
+    return render_template('login.html')
 
 
 @app.route('/b/<uname>')
