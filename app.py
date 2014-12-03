@@ -1,6 +1,6 @@
 __author__ = 'spencer'
 from flask import Flask, request, render_template
-from chatbot.chatbot import init, generate_sentence
+from chatbot.chatbot import init, authenticate_twitter, generate_sentence
 
 app = Flask(__name__)
 
@@ -10,8 +10,9 @@ def home():
     return 'hello.'
 
 
-@app.route('/b')
-def bot():
+@app.route('/b/<uname>')
+def bot(uname):
+    init(None, [uname])
     return render_template('base.html')
 
 
@@ -20,5 +21,4 @@ def send():
     return generate_sentence(request.form['input_field'])
 
 if __name__ == '__main__':
-    init(None, None)
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
