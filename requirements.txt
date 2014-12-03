@@ -11,4 +11,3 @@ oauthlib==0.7.2
 requests==2.3.0
 requests-oauthlib==0.4.1
 six==1.7.3
-tweepy==2.3
