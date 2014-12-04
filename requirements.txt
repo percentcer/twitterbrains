@@ -8,6 +8,6 @@ WTForms==2.0.1
 Werkzeug==0.9.6
 itsdangerous==0.24
 oauthlib==0.7.2
-requests==2.3.0
+requests==2.4.3
 requests-oauthlib==0.4.1
 six==1.7.3
