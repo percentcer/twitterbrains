@@ -1,7 +1,7 @@
 __author__ = 'spencer'
 
 import argparse
-from chatbot import init, authenticate_twitter, generate_sentence
+from chatbot import init, generate_sentence
 from flask import Flask, request, render_template, session, redirect
 import tweepy
 
@@ -26,6 +26,7 @@ def oauth_twitter():
     session['request_token'] = (auth.request_token.copy())
 
     return redirect(redirect_url)
+
 
 @app.route('/oauth/twitter/callback')
 def oauth_twitter_callback():
